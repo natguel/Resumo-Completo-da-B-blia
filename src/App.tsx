@@ -14,16 +14,17 @@ import {
 import { motion } from "motion/react";
 
 export default function App() {
-  const scrollToOffer = () => {
-    const element = document.getElementById("main-payment-block");
-    element?.scrollIntoView({ behavior: "smooth" });
+  const CHECKOUT_URL = "https://pay.cakto.com.br/ydh33mz_908516";
+
+  const handleCheckout = () => {
+    window.location.href = CHECKOUT_URL;
   };
 
   return (
     <div className="min-h-screen bg-brand-bg font-sans selection:bg-brand-primary/20">
       
       {/* ── SEÇÃO 1 — OFERTA IMEDIATA ── */}
-      <section className="pt-12 pb-20 px-6 bg-brand-bg-alt text-center border-b border-slate-100">
+      <section className="pt-20 pb-32 px-6 bg-brand-bg-alt text-center border-b border-slate-100">
         <div className="container mx-auto max-w-4xl">
           <div className="flex justify-center mb-8">
             <motion.div 
@@ -87,20 +88,26 @@ export default function App() {
             </p>
           </div>
 
-          <div className="max-w-md mx-auto space-y-6">
+          <div className="max-w-md mx-auto space-y-8">
             <button 
-              onClick={scrollToOffer}
-              className="w-full bg-brand-urgency text-white py-6 px-4 rounded-[2.5rem] shadow-[0_20px_50px_rgba(40,167,69,0.4)] hover:bg-[#218838] transition-all duration-300 active:scale-[0.98] flex flex-col items-center gap-1 group"
+              onClick={handleCheckout}
+              className="w-full bg-brand-urgency text-white py-8 px-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(40,167,69,0.3)] hover:bg-[#218838] transition-all duration-300 active:scale-[0.98] flex flex-col items-center gap-2 group"
             >
-              <div className="flex items-center gap-2 font-black text-xl md:text-2xl tracking-tight uppercase">
-                Sim, quero adicionar por R$ 29,90
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              <div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 font-black text-xl md:text-2xl tracking-tighter uppercase leading-none">
+                <span>Sim, quero adicionar por</span>
+                <span className="text-white whitespace-nowrap flex items-center gap-2">
+                  R$ 29,90
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
+                </span>
               </div>
-              <div className="text-[11px] md:text-sm font-semibold opacity-90 uppercase tracking-widest">
+              <div className="text-[11px] md:text-xs font-bold opacity-80 uppercase tracking-widest mt-1">
                 Pagamento Único • Acesso Vitalício
               </div>
             </button>
-            <button className="text-slate-300 hover:text-slate-400 transition-colors text-[10px] font-bold uppercase tracking-[0.2em] underline decoration-slate-200 underline-offset-8">
+            <button 
+              onClick={() => window.location.href = "https://checkout.cakto.com.br/cancel"}
+              className="text-slate-400 hover:text-slate-500 transition-colors text-[10px] font-bold uppercase tracking-[0.2em] underline decoration-slate-200 underline-offset-8"
+            >
               Não, obrigado. Quero continuar sem este material.
             </button>
           </div>
@@ -126,7 +133,7 @@ export default function App() {
       </section>
 
       {/* ── SEÇÃO 3 — POR QUE VALE ADICIONAR AGORA ── */}
-      <section className="py-24 bg-brand-bg-alt px-6">
+      <section className="py-32 bg-brand-bg-alt px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-black font-display text-slate-900 uppercase mb-8 leading-[1.15] tracking-tighter">
             CHEGA DE VERGONHA POR NÃO ENTENDER A BÍBLIA
@@ -157,7 +164,7 @@ export default function App() {
       </section>
 
       {/* ── SEÇÃO 4 — CTA FINAL ── */}
-      <section className="py-24 bg-brand-primary px-6 text-center text-white overflow-hidden relative">
+      <section className="py-32 bg-brand-primary px-6 text-center text-white overflow-hidden relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/10 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div className="container mx-auto max-w-3xl relative z-10">
@@ -188,19 +195,22 @@ export default function App() {
           </h2>
           
           <p className="text-white/50 text-lg md:text-xl max-w-xl mx-auto mb-10 font-light">
-            Garanta o Resumo Completo da Bíblia por apenas <span className="text-white font-bold tracking-widest px-4 py-1.5 bg-white/10 rounded-xl border border-white/20">R$ 29,90</span> nesta oferta especial. + Bônus 27 Mapas Mentais do Novo Testamento
+            Garanta o Resumo Completo da Bíblia por apenas <span className="text-white font-bold tracking-widest px-4 py-1.5 bg-white/10 rounded-xl border border-white/20 whitespace-nowrap">R$ 29,90</span> nesta oferta especial. + Bônus 27 Mapas Mentais do Novo Testamento
           </p>
 
           <div className="max-w-md mx-auto">
             <button 
-              onClick={scrollToOffer}
-              className="w-full bg-brand-urgency text-white py-6 px-4 rounded-[2.5rem] shadow-[0_20px_50px_rgba(40,167,69,0.4)] hover:bg-[#218838] transition-all duration-300 active:scale-[0.98] flex flex-col items-center gap-1 group"
+              onClick={handleCheckout}
+              className="w-full bg-brand-urgency text-white py-8 px-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:bg-[#218838] transition-all duration-300 active:scale-[0.98] flex flex-col items-center gap-2 group"
             >
-              <div className="flex items-center gap-2 font-black text-xl md:text-2xl tracking-tight uppercase">
-                Adicionar ao meu pedido por R$ 29,90
-                <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              <div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 font-black text-xl md:text-2xl tracking-tighter uppercase leading-none">
+                <span>Adicionar ao meu pedido por</span>
+                <span className="text-white whitespace-nowrap flex items-center gap-2">
+                  R$ 29,90
+                  <ChevronRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
+                </span>
               </div>
-              <div className="text-[11px] md:text-sm font-semibold opacity-90 uppercase tracking-widest">
+              <div className="text-[11px] md:text-xs font-bold opacity-80 uppercase tracking-widest mt-1">
                 Pagamento Único • Acesso Vitalício
               </div>
             </button>

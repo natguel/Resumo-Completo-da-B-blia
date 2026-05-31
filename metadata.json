@@ -1,5 +1,5 @@
 {
-  "name": "O Resumo Completo da Bíblia — Oferta Única",
+  "name": "Resumo Bíblico",
   "description": "Página de upsell exclusiva para o Resumo Completo da Bíblia com oferta de tempo limitado.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
