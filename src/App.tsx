@@ -14,12 +14,6 @@ import {
 import { motion } from "motion/react";
 
 export default function App() {
-  const CHECKOUT_URL = "https://pay.cakto.com.br/ydh33mz_908516";
-
-  const handleCheckout = () => {
-    window.location.href = CHECKOUT_URL;
-  };
-
   return (
     <div className="min-h-screen bg-brand-bg font-sans selection:bg-brand-primary/20">
       
@@ -88,22 +82,25 @@ export default function App() {
             </p>
           </div>
 
-          <div className="max-w-md mx-auto space-y-8">
-            <button 
-              onClick={handleCheckout}
-              className="w-full bg-brand-urgency text-white py-8 px-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(40,167,69,0.3)] hover:bg-[#218838] transition-all duration-300 active:scale-[0.98] flex flex-col items-center gap-2 group"
-            >
-              <div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 font-black text-xl md:text-2xl tracking-tighter uppercase leading-none">
-                <span>Sim, quero adicionar por</span>
-                <span className="text-white whitespace-nowrap flex items-center gap-2">
-                  R$ 29,90
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
-                </span>
-              </div>
-              <div className="text-[11px] md:text-xs font-bold opacity-80 uppercase tracking-widest mt-1">
-                Pagamento Único • Acesso Vitalício
-              </div>
-            </button>
+          <div className="max-w-md mx-auto">
+            <cakto-upsell-buttons>
+              <cakto-upsell-accept
+                bg-color="#28A745"
+                text-color="#ffffff"
+                upsell-accept-url="members_area"
+                offer-id="ydh33mz"
+                app-base-url="https://app.cakto.com.br"
+                offer-type="upsell"
+                upsell-reject-url="members_area"   
+              >
+                Sim, quero aproveitar a oferta
+              </cakto-upsell-accept>
+              <cakto-upsell-reject
+                upsell-reject-url="members_area"       
+              >
+                Não, eu não quero aproveitar a oferta
+              </cakto-upsell-reject>
+            </cakto-upsell-buttons>
           </div>
         </div>
       </section>
@@ -193,21 +190,24 @@ export default function App() {
           </p>
 
           <div className="max-w-md mx-auto">
-            <button 
-              onClick={handleCheckout}
-              className="w-full bg-brand-urgency text-white py-8 px-6 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:bg-[#218838] transition-all duration-300 active:scale-[0.98] flex flex-col items-center gap-2 group"
-            >
-              <div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 font-black text-xl md:text-2xl tracking-tighter uppercase leading-none">
-                <span>Adicionar ao meu pedido por</span>
-                <span className="text-white whitespace-nowrap flex items-center gap-2">
-                  R$ 29,90
-                  <ChevronRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
-                </span>
-              </div>
-              <div className="text-[11px] md:text-xs font-bold opacity-80 uppercase tracking-widest mt-1">
-                Pagamento Único • Acesso Vitalício
-              </div>
-            </button>
+            <cakto-upsell-buttons>
+              <cakto-upsell-accept
+                bg-color="#28A745"
+                text-color="#ffffff"
+                upsell-accept-url="members_area"
+                offer-id="ydh33mz"
+                app-base-url="https://app.cakto.com.br"
+                offer-type="upsell"
+                upsell-reject-url="members_area"   
+              >
+                Sim, quero aproveitar a oferta
+              </cakto-upsell-accept>
+              <cakto-upsell-reject
+                upsell-reject-url="members_area"       
+              >
+                Não, eu não quero aproveitar a oferta
+              </cakto-upsell-reject>
+            </cakto-upsell-buttons>
           </div>
         </div>
       </section>
