@@ -104,12 +104,6 @@ export default function App() {
                 Pagamento Único • Acesso Vitalício
               </div>
             </button>
-            <button 
-              onClick={() => window.location.href = "https://checkout.cakto.com.br/cancel"}
-              className="text-slate-400 hover:text-slate-500 transition-colors text-[10px] font-bold uppercase tracking-[0.2em] underline decoration-slate-200 underline-offset-8"
-            >
-              Não, obrigado. Quero continuar sem este material.
-            </button>
           </div>
         </div>
       </section>
