@@ -58,25 +58,29 @@ cakto-upsell-accept::part(button):hover {
 cakto-upsell-reject {
   display: block !important;
   margin-top: 0.5rem !important;
-  opacity: 0.3 !important;
+  opacity: 0.2 !important;
   transition: opacity 0.3s !important;
 }
 
 cakto-upsell-reject:hover {
-  opacity: 0.6 !important;
+  opacity: 0.5 !important;
 }
 
 cakto-upsell-reject::part(button) {
   background: transparent !important;
-  color: #64748b !important;
-  font-size: 10px !important;
+  color: #94a3b8 !important;
+  font-size: 8px !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.15em !important;
+  letter-spacing: 0.2em !important;
   border: none !important;
   cursor: pointer !important;
-  text-decoration: underline !important;
+  text-decoration: none !important;
   padding: 0.5rem !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
+}
+
+cakto-upsell-reject::part(button):hover {
+  text-decoration: underline !important;
 }
 
 @layer base {
